@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Qualitative Comparison - Supplementary Material</title>
+	<link href="css/foundation.css" rel="stylesheet" type="text/css" />
+	<link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+</head>
+
+<body onload="initPage();">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<br />
+				<h1>See, Point, Fly:</h1>
+				<h1>A Learning-Free VLM Framework for Universal Unmanned Aerial Navigation</h1>
+				<br />
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<a href="../index.html">
+					<button type="button" class="btn btn-link"><span class="glyphicon glyphicon-chevron-left"
+							aria-hidden="true"></span> Back</button>
+				</a>
+				<br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Qualitative comparison of flight trajectories <span id="environment-type">in the simulator</span>.
+				</h3>
+				<hr />
+				<div class="well well-sm">
+					<form class="form-inline">
+						&emsp;
+						<div class="form-group">
+							<label for="frame-idx-input">Comparison: <span id="frame-idx">1</span> / <span
+									id="frame-total">3</span>&nbsp;</label>
+							<span id="sequence_name" style="font-weight:bold; width:100px;">: Obstacle
+								avoidance&nbsp;</span>
+							<br />
+							<div class="input-group">
+								<span class="input-group-btn">
+									<button class="btn btn-info" type="button" onclick="PrevFrame();"><span
+											class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+								</span>
+								<input type="range" class="form-control" id="frame-idx-input" min="1" max="3" step="1"
+									value="1" oninput="ChangeFrame();" />
+								<span class="input-group-btn">
+									<button class="btn btn-info" type="button" onclick="NextFrame();"><span
+											class="glyphicon glyphicon-chevron-right"
+											aria-hidden="true"></span></button>
+								</span>
+							</div>
+							<h5>Prompt: <span id="task-prompt">Avoid obstacles and fly through the building</span></h5>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div id="video_container"></div>
+			<br />
+			<br />
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.js"
+		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script src="js/jquery.event.move.js"></script>
+	<script src="js/jquery.twentytwenty.js"></script>
+	<script>
+		$(function () {
+			$(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({ default_offset_pct: 0.7 });
+			$(".twentytwenty-container[data-orientation='vertical']").twentytwenty({ default_offset_pct: 0.3, orientation: 'vertical' });
+		});
+	</script>
+
+	<style type="text/css">
+		.container {
+			background-color: #FBFBFC;
+		}
+
+		.teaser-img {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+
+		.img-responsive {
+			margin: auto;
+		}
+
+		.comparison-table {
+			table-layout: fixed;
+			word-wrap: break-word;
+		}
+
+		.comparison-table th {
+			text-align: center;
+		}
+
+		.disabled {
+			pointer-events: none;
+			opacity: 0.7;
+		}
+
+		/* Responsive video styling to prevent overflow */
+		.responsive-video {
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+		}
+
+		/* Ensures proper spacing between columns */
+		.columns {
+			margin-bottom: 15px;
+		}
+
+		/* Error message styling */
+		.error-message {
+			padding: 20px;
+			margin-top: 20px;
+			color: #721c24;
+			background-color: #f8d7da;
+			border: 1px solid #f5c6cb;
+			border-radius: 4px;
+		}
+	</style>
+
+	<script src="js/videoControl.js"></script>
+</body>
+
+</html>
