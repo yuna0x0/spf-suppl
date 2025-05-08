@@ -42,6 +42,7 @@ let tasks_sim = [{
     path: 'obstacle',
     displayName: 'Obstacle avoidance',
     prompt: "Avoid obstacles and fly through the building",
+    description: "* TypeFly Output: I cannot fly and avoid obstacles simultaneously with my current skills.",
     baselines: [
         baselines.pivot,
         baselines.ours
@@ -199,6 +200,7 @@ function ChangeFrame() {
     document.getElementById("sequence_name").innerHTML = ": " + tasks[frame_idx - 1].displayName + "&nbsp;";
 
     document.getElementById("task-prompt").textContent = tasks[frame_idx - 1].prompt;
+    document.getElementById("task-desc").textContent = tasks[frame_idx - 1].description || "";
 
     generateVideoGrid(currentTask);
 
