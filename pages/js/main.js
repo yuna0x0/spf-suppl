@@ -234,10 +234,10 @@ function initPage() {
     const typeParam = getUrlParameter('type');
     const embedParam = getUrlParameter('embed');
 
-    if (embedParam === 'true') {
+    if (embedParam !== 'true') {
         const paperTitleElement = document.getElementById('paper-title');
         if (paperTitleElement) {
-            paperTitleElement.style.display = 'none';
+            paperTitleElement.style.display = 'block';
         }
     }
 
