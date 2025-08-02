@@ -232,6 +232,15 @@ function PrevFrame() {
 
 function initPage() {
     const typeParam = getUrlParameter('type');
+    const hideTitleParam = getUrlParameter('hideTitle');
+
+    // Handle hideTitle parameter
+    if (hideTitleParam === 'true') {
+        const paperTitleElement = document.getElementById('paper-title');
+        if (paperTitleElement) {
+            paperTitleElement.style.display = 'none';
+        }
+    }
 
     if (typeParam === 'simulator') {
         qualType = 'simulator';
