@@ -232,10 +232,9 @@ function PrevFrame() {
 
 function initPage() {
     const typeParam = getUrlParameter('type');
-    const hideTitleParam = getUrlParameter('hideTitle');
+    const embedParam = getUrlParameter('embed');
 
-    // Handle hideTitle parameter
-    if (hideTitleParam === 'true') {
+    if (embedParam === 'true') {
         const paperTitleElement = document.getElementById('paper-title');
         if (paperTitleElement) {
             paperTitleElement.style.display = 'none';
