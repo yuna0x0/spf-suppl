@@ -24,7 +24,7 @@
 <a href="https://openreview.net/forum?id=AE299O0tph"><img src='https://img.shields.io/badge/OpenReview-CoRL 2025-b31b1b' alt='OpenReview'></a>
 </div>
 
-### :warning: This repo is for the supplementary material only. For the main code repo, please visit [here](https://github.com/tommy60718/see-point-fly).
+### :warning: This repo is for the supplementary material only. For the main code repo, please visit [here](https://github.com/Hu-chih-yao/see-point-fly).
 
 - [Supplementary PDF](spf_supplementary.pdf)
 - [Supplementary Page (Comparison Videos)](https://spf-web.pages.dev/suppl/)
